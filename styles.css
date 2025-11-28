@@ -4,11 +4,13 @@ body {
   background: #111015;
   color: #f5f2ea;
 }
+
 .page {
   max-width: 480px;
   margin: 0 auto;
   padding-bottom: 80px;
 }
+
 .header {
   position: sticky;
   top: 0;
@@ -17,12 +19,14 @@ body {
   backdrop-filter: blur(10px);
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
+
 .logo-wrap {
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 16px 12px 8px;
 }
+
 .logo-wrap img {
   height: 56px;
   width: 56px;
@@ -30,11 +34,13 @@ body {
   object-fit: contain;
   background: #f5f5f5;
 }
+
 .bar-name {
   margin-left: 12px;
   font-size: 18px;
   letter-spacing: 0.12em;
 }
+
 .index-nav {
   display: flex;
   overflow-x: auto;
@@ -42,7 +48,11 @@ body {
   gap: 8px;
   scrollbar-width: none;
 }
-.index-nav::-webkit-scrollbar { display: none; }
+
+.index-nav::-webkit-scrollbar {
+  display: none;
+}
+
 .index-btn {
   flex: 0 0 auto;
   padding: 6px 12px;
@@ -55,25 +65,30 @@ body {
   color: #f5f2ea;
   cursor: pointer;
 }
+
 .index-btn.active {
   background: #d1aa4b;
   color: #151515;
   border-color: #d1aa4b;
   font-weight: 600;
 }
+
 .section {
   padding: 18px 18px 6px;
 }
+
 .section-title {
   display: flex;
   align-items: center;
   margin-bottom: 8px;
 }
+
 .section-title-line {
   flex: 1;
   height: 1px;
   background: linear-gradient(to right, transparent, rgba(214, 183, 95, 0.8));
 }
+
 .section-title-text {
   padding: 0 10px;
   font-size: 14px;
@@ -81,60 +96,72 @@ body {
   text-transform: uppercase;
   color: #d6b75f;
 }
+
 .section-subtitle {
   font-size: 11px;
   color: rgba(245, 242, 234, 0.7);
   margin-bottom: 6px;
 }
+
 .menu-list {
   border-radius: 14px;
   background: rgba(22, 20, 26, 0.98);
   border: 1px solid rgba(214, 183, 95, 0.2);
   padding: 6px 10px;
 }
+
 .menu-item {
   padding: 8px 2px;
   border-bottom: 1px dashed rgba(255, 255, 255, 0.08);
 }
+
 .menu-item:last-child {
   border-bottom: none;
 }
+
 .menu-header {
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
   gap: 8px;
 }
+
 .menu-names {
   flex: 1;
   min-width: 0;
 }
+
 .menu-name-ko {
   font-size: 14px;
   font-weight: 600;
   margin-bottom: 2px;
 }
+
 .menu-name-en {
   font-size: 11px;
   color: rgba(245, 242, 234, 0.65);
 }
+
 .menu-price {
   font-size: 13px;
   font-weight: 600;
   color: #f0dd9a;
   white-space: nowrap;
 }
+
 .menu-note {
   margin-top: 4px;
   font-size: 11px;
   color: rgba(245, 242, 234, 0.8);
 }
+
 .tag-row {
   margin-top: 4px;
   display: flex;
   flex-wrap: wrap;
   gap: 4px;
 }
+
 .tag {
   font-size: 10px;
   padding: 2px 6px;
@@ -142,26 +169,32 @@ body {
   border: 1px solid rgba(245, 242, 234, 0.18);
   color: rgba(245, 242, 234, 0.9);
 }
+
 .tag-peat {
   border-color: #7fd2ff;
   color: #7fd2ff;
 }
+
 .tag-sherry {
   border-color: #f18bb8;
   color: #f7a7c7;
 }
+
 .tag-sweet {
   border-color: #ffcf72;
   color: #ffcf72;
 }
+
 .tag-dry {
   border-color: #9bd18f;
   color: #9bd18f;
 }
+
 .tag-beginner {
   border-color: #d1aa4b;
   color: #d1aa4b;
 }
+
 .scale-row {
   margin-top: 4px;
   display: flex;
@@ -170,14 +203,17 @@ body {
   font-size: 10px;
   color: rgba(245, 242, 234, 0.75);
 }
+
 .scale-label {
   margin-right: 4px;
 }
+
 .scale-bar {
   display: inline-flex;
   gap: 2px;
   vertical-align: middle;
 }
+
 .scale-dot {
   width: 8px;
   height: 8px;
@@ -185,10 +221,12 @@ body {
   border: 1px solid rgba(245, 242, 234, 0.25);
   background: transparent;
 }
+
 .scale-dot.on {
   background: #d6b75f;
   border-color: #d6b75f;
 }
+
 footer {
   padding: 24px 16px 32px;
   font-size: 10px;

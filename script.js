@@ -127,7 +127,7 @@ const menuData = {
       name_en: "Nachos",
       price: 10000,
       note: "따뜻한 또띠아 칩에 치즈와 살사를 곁들인 가벼운 안주.",
-      tags: ["가벼운 안주", ""]
+      tags: ["가벼운 안주"]
     },
     {
       name_ko: "소시지 & 포테이토",
@@ -194,7 +194,7 @@ function renderCategory(key) {
 
     let scaleRow = "";
     if (scaleHtml) {
-        scaleRow = `<div class="scale-row">${scaleHtml}</div>`;
+      scaleRow = `<div class="scale-row">${scaleHtml}</div>`;
     }
 
     div.innerHTML = `
@@ -220,7 +220,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Navigation logic
   const navBtns = document.querySelectorAll(".index-btn");
-  
+
   // Intersection Observer for scroll spy
   const observerOptions = {
     root: null,
@@ -262,4 +262,3 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 });
-
