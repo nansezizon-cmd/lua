@@ -127,7 +127,7 @@ const menuData = {
       name_en: "Nachos",
       price: 10000,
       note: "따뜻한 또띠아 칩에 치즈와 살사를 곁들인 가벼운 안주.",
-      tags: ["가벼운 안주", "공유하기 좋음"]
+      tags: ["가벼운 안주", ""]
     },
     {
       name_ko: "소시지 & 포테이토",
@@ -262,3 +262,4 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 });
+
