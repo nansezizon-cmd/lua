@@ -2,34 +2,95 @@
 const menuData = {
   cocktail: [
     {
-      name_ko: "루아 시그니처 칵테일",
-      name_en: "LUA Signature Cocktail",
+      name_ko: "갓파더",
+      name_en: "Godfather",
+      price: 15000,
+      note: "위스키와 아마레또의 중후한 조화, 시나몬 향이 매력적인 칵테일.",
+      tags: ["도수 높음", "시나몬", "중후함"],
+      image: "갓파더.png"
+    },
+    {
+      name_ko: "네그로니",
+      name_en: "Negroni",
       price: 14000,
-      note: "달콤한 과일 향과 가벼운 산미, 처음 칵테일을 드시는 분도 편하게 즐길 수 있는 잔.",
-      tags: ["달달함", "시그니처", "초보자 추천"],
-      peat: 0,
-      sherry: 0
+      note: "진, 캄파리, 스위트 베르무트의 달콤쌉쌀한 밸런스.",
+      tags: ["식전주", "쌉쌀함", "클래식"],
+      image: "네그로니.png"
     },
     {
-      name_ko: "애플 마티니",
-      name_en: "Apple Martini",
-      price: 13000,
-      note: "사과 향이 선명하고 산뜻한 단맛, 깔끔하게 떨어지는 마무리.",
-      tags: ["달달함", "상큼함"],
-      peat: 0,
-      sherry: 0
+      name_ko: "데킬라 선라이즈",
+      name_en: "Tequila Sunrise",
+      price: 12000,
+      note: "오렌지 주스와 석류 시럽이 만들어내는 일출 같은 색감.",
+      tags: ["달달함", "예쁨", "상큼함"],
+      image: "데킬라선라이즈.png"
     },
     {
-      name_ko: "마가리타",
-      name_en: "Margarita",
+      name_ko: "롱 아일랜드 아이스 티",
+      name_en: "Long Island Iced Tea",
       price: 13000,
-      note: "라임의 산미와 소금 림이 어우러지는 클래식 테킬라 칵테일.",
-      tags: ["산미", "클래식"],
-      peat: 0,
-      sherry: 0
+      note: "홍차 맛이 나지만 4가지 술이 들어간 도수 높은 칵테일.",
+      tags: ["도수 높음", "양 많음", "가성비"],
+      image: "롱아이일랜드아이스티.png"
+    },
+    {
+      name_ko: "모스크 뮬",
+      name_en: "Moscow Mule",
+      price: 13000,
+      note: "보드카와 진저비어, 라임의 시원하고 알싸한 청량감.",
+      tags: ["상큼함", "탄산", "구리잔"],
+      image: "모스크뮬.png"
+    },
+    {
+      name_ko: "미도리 사워",
+      name_en: "Midori Sour",
+      price: 12000,
+      note: "멜론 리큐르의 달콤함과 레몬의 상큼함이 어우러진 칵테일.",
+      tags: ["달달함", "초보자 추천", "멜론맛"],
+      image: "미도리사워.png"
+    },
+    {
+      name_ko: "블랙 러시안",
+      name_en: "Black Russian",
+      price: 13000,
+      note: "보드카와 커피 리큐르의 진하고 달콤한 맛.",
+      tags: ["도수 높음", "달달함", "커피향"],
+      image: "블랙러시안.png"
+    },
+    {
+      name_ko: "옥보단",
+      name_en: "Okbodan",
+      price: 12000,
+      note: "잔 테두리의 설탕과 함께 즐기는 새콤달콤한 과일 맛.",
+      tags: ["달달함", "여성 취향", "예쁨"],
+      image: "옥보단.png"
+    },
+    {
+      name_ko: "올드 패션드",
+      name_en: "Old Fashioned",
+      price: 15000,
+      note: "위스키 칵테일의 클래식. 묵직하고 달콤한 풍미.",
+      tags: ["클래식", "도수 높음", "위스키 베이스"],
+      image: "올드패션드.png"
+    },
+    {
+      name_ko: "진 토닉",
+      name_en: "Gin & Tonic",
+      price: 11000,
+      note: "프리미엄 진과 토닉워터, 라임이 어우러진 깔끔한 맛.",
+      tags: ["깔끔함", "기본", "시원함"],
+      image: "진토닉.png"
     }
   ],
   highball: [
+    {
+      name_ko: "얼그레이 하이볼",
+      name_en: "Earl Grey Highball",
+      price: 12000,
+      note: "진한 얼그레이 시럽의 향긋함과 위스키의 조화.",
+      tags: ["달달함", "인기", "향긋함"],
+      image: "얼그레이하이볼.png"
+    },
     {
       name_ko: "시나몬 하이볼",
       name_en: "Cinnamon Highball",
@@ -51,28 +112,69 @@ const menuData = {
   ],
   wine: [
     {
-      name_ko: "산타 알리샤 까베르네 소비뇽",
-      name_en: "Santa Alicia Cabernet Sauvignon",
-      price: 46000,
-      note: "검붉은 과일 향과 부드러운 탄닌, 고기와 잘 어울리는 드라이 레드.",
-      tags: ["드라이", "고기 잘 어울림"],
+      name_ko: "몬테스 알파 카베르네 소비뇽",
+      name_en: "Montes Alpha Cabernet Sauvignon",
+      price: 45000,
+      note: "칠레 프리미엄 레드 와인의 정석. 진한 과실 향과 부드러운 오크 풍미.",
+      tags: ["레드", "드라이", "베스트셀러"],
       sweetness: 1,
       acidity: 2,
-      body: 2,
+      body: 3,
       peat: 0,
-      sherry: 0
+      sherry: 0,
+      image: "몬테스 알파 카베르네 소비뇽.png"
     },
     {
-      name_ko: "샤르도네 하우스 와인",
-      name_en: "House Chardonnay",
-      price: 42000,
-      note: "부드러운 열대과일 향과 크리미한 질감, 가볍게 즐기기 좋은 화이트.",
-      tags: ["부드러움", "초보자 추천"],
-      sweetness: 2,
+      name_ko: "클라우디 베이 소비뇽 블랑",
+      name_en: "Cloudy Bay Sauvignon Blanc",
+      price: 62000,
+      note: "뉴질랜드 소비뇽 블랑의 기준. 폭발적인 열대과일 향과 산뜻한 산미.",
+      tags: ["화이트", "상큼함", "프리미엄"],
+      sweetness: 1,
+      acidity: 3,
+      body: 2,
+      peat: 0,
+      sherry: 0,
+      image: "클라우디 베이 소비뇽 블랑.png"
+    },
+    {
+      name_ko: "반피 로사 리갈 브라케토 다퀴",
+      name_en: "Banfi Rosa Regale Brachetto d'Acqui",
+      price: 55000,
+      note: "장미 향과 딸기 향이 가득한 달콤한 스파클링 레드 와인.",
+      tags: ["스파클링", "달달함", "로맨틱"],
+      sweetness: 3,
       acidity: 2,
       body: 1,
       peat: 0,
-      sherry: 0
+      sherry: 0,
+      image: "반피 로사 리갈 브라케토 다퀴.png"
+    },
+    {
+      name_ko: "콥케 루비 포트",
+      name_en: "Kopke Ruby Port",
+      price: 38000,
+      note: "달콤하고 진한 포트 와인. 디저트나 치즈와 환상적인 궁합.",
+      tags: ["포트", "달달함", "도수 높음"],
+      sweetness: 3,
+      acidity: 1,
+      body: 3,
+      peat: 0,
+      sherry: 0,
+      image: "콥케 루비 포트.png"
+    },
+    {
+      name_ko: "옐로우테일 샤르도네",
+      name_en: "Yellow Tail Chardonnay",
+      price: 29000,
+      note: "호주의 대중적인 화이트 와인. 신선한 복숭아 향과 부드러운 바닐라 터치.",
+      tags: ["화이트", "가성비", "부드러움"],
+      sweetness: 2,
+      acidity: 2,
+      body: 2,
+      peat: 0,
+      sherry: 0,
+      image: "옐로우테일 샤르도네.png"
     }
   ],
   whisky: [
@@ -123,32 +225,28 @@ const menuData = {
   ],
   food: [
     {
-      name_ko: "나초",
-      name_en: "Nachos",
-      price: 10000,
-      note: "따뜻한 또띠아 칩에 치즈와 살사를 곁들인 가벼운 안주.",
-      tags: ["가벼운 안주"]
+      name_ko: "치즈 호두마루",
+      name_en: "Cheese Walnut Maru",
+      price: 12900,
+      note: "고소한 호두와 부드러운 치즈의 조화.",
+      tags: ["고소함", "시그니처"],
+      image: "치즈 호두마루.png"
     },
     {
-      name_ko: "소시지 & 포테이토",
-      name_en: "Sausage & Potato",
-      price: 10000,
-      note: "구운 소시지와 감자를 함께 즐기는 플레이트.",
-      tags: ["든든함"]
+      name_ko: "샤코",
+      name_en: "Shine Muscat + Coconut",
+      price: 8900,
+      note: "그냥 시원한 샤인 머스켓 샤베트에 코코넛 믹스에요 ㅋ",
+      tags: ["와인 잘 어울림", "여럿이서"],
+      image: "샤코.png"
     },
     {
-      name_ko: "치즈·과일 플래터",
-      name_en: "Cheese & Fruit Platter",
-      price: 18000,
-      note: "여러 가지 치즈와 제철 과일을 곁들인 와인 전용 플레이트.",
-      tags: ["와인 잘 어울림"]
-    },
-    {
-      name_ko: "멜론 프로슈토",
-      name_en: "Melon Prosciutto",
-      price: 17000,
-      note: "달콤한 멜론과 짭조름한 생햄의 클래식 조합.",
-      tags: ["와인 잘 어울림", "가벼운 안주"]
+      name_ko: "통구이 허니브리 치즈",
+      name_en: "Roasted Honey Brie Cheese",
+      price: 18900,
+      note: "통째로 구운 브리 치즈 위에 꿀과 견과류를 듬뿍 올린 메뉴.",
+      tags: ["달콤함"],
+      image: "통구이 허니브리 치즈.png"
     }
   ]
 };
@@ -197,17 +295,26 @@ function renderCategory(key) {
       scaleRow = `<div class="scale-row">${scaleHtml}</div>`;
     }
 
+    // Image rendering
+    let imageHtml = "";
+    if (item.image) {
+      imageHtml = `<div class="menu-img-wrap"><img src="${item.image}" alt="${item.name_ko}" class="menu-img"></div>`;
+    }
+
     div.innerHTML = `
-      <div class="menu-header">
-        <div class="menu-names">
-          <div class="menu-name-ko">${item.name_ko}</div>
-          <div class="menu-name-en">${item.name_en}</div>
+      ${imageHtml}
+      <div class="menu-content">
+        <div class="menu-header">
+          <div class="menu-names">
+            <div class="menu-name-ko">${item.name_ko}</div>
+            <div class="menu-name-en">${item.name_en}</div>
+          </div>
+          <div class="menu-price">${item.price.toLocaleString()}</div>
         </div>
-        <div class="menu-price">${item.price.toLocaleString()}</div>
+        <div class="menu-note">${item.note}</div>
+        <div class="tag-row">${tagHtml}</div>
+        ${scaleRow}
       </div>
-      <div class="menu-note">${item.note}</div>
-      <div class="tag-row">${tagHtml}</div>
-      ${scaleRow}
     `;
     listEl.appendChild(div);
   });
@@ -260,5 +367,41 @@ document.addEventListener("DOMContentLoaded", () => {
         window.scrollTo({ top, behavior: "smooth" });
       }
     });
+  });
+
+  // Image Modal Logic
+  const modal = document.getElementById("imageModal");
+  const modalImg = document.getElementById("modalImage");
+  const closeBtn = document.querySelector(".modal-close");
+
+  // Open modal on image click
+  document.addEventListener("click", (e) => {
+    if (e.target.classList.contains("menu-img")) {
+      modal.style.display = "flex";
+      // Trigger reflow
+      void modal.offsetWidth;
+      modal.classList.add("show");
+      modalImg.src = e.target.src;
+      document.body.style.overflow = "hidden"; // Prevent scrolling
+    }
+  });
+
+  // Close modal function
+  function closeModal() {
+    modal.classList.remove("show");
+    setTimeout(() => {
+      modal.style.display = "none";
+      document.body.style.overflow = ""; // Restore scrolling
+    }, 300);
+  }
+
+  // Close on X click
+  closeBtn.addEventListener("click", closeModal);
+
+  // Close on background click
+  modal.addEventListener("click", (e) => {
+    if (e.target === modal) {
+      closeModal();
+    }
   });
 });

@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LUA BAR 관리자</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            background: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        h1,
+        h2 {
+            color: #333;
+        }
+
+        .login-box {
+            max-width: 300px;
+            margin: 50px auto;
+            text-align: center;
+        }
+
+        input,
+        select,
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0 15px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        button {
+            background: #1e3f66;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background: #152e4d;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .menu-list {
+            margin-top: 20px;
+        }
+
+        .menu-item {
+            border-bottom: 1px solid #eee;
+            padding: 10px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .menu-item:last-child {
+            border-bottom: none;
+        }
+
+        .btn-sm {
+            padding: 5px 10px;
+            font-size: 12px;
+            margin-left: 5px;
+        }
+
+        .btn-edit {
+            background: #b8860b;
+        }
+
+        .btn-delete {
+            background: #d9534f;
+        }
+
+        .modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            width: 90%;
+            max-width: 500px;
+            max-height: 90vh;
+            overflow-y: auto;
+        }
+
+        .close {
+            float: right;
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        .tag-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 5px;
+            margin-bottom: 10px;
+        }
+
+        .tag-badge {
+            background: #eee;
+            padding: 2px 8px;
+            border-radius: 10px;
+            font-size: 12px;
+            cursor: pointer;
+        }
+
+        .tag-badge.selected {
+            background: #1e3f66;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="login-screen" class="container login-box">
+        <h2>관리자 로그인</h2>
+        <input type="email" id="email" placeholder="이메일">
+        <input type="password" id="password" placeholder="비밀번호">
+        <button id="login-btn">로그인</button>
+    </div>
+
+    <div id="admin-screen" class="container hidden">
+        <div style="display:flex; justify-content:space-between; align-items:center;">
+            <h1>메뉴 관리</h1>
+            <button id="logout-btn" class="btn-sm" style="background:#666;">로그아웃</button>
+        </div>
+
+        <div style="margin-bottom: 20px; padding: 10px; background: #eef; border-radius: 4px;">
+            <h3>데이터 초기화</h3>
+            <p style="font-size:12px; color:#666;">데이터베이스가 비어있다면 아래 버튼을 눌러 기본 메뉴 데이터를 업로드하세요.</p>
+            <button id="init-db-btn" style="background:#28a745;">기본 데이터 업로드</button>
+        </div>
+
+        <div style="margin-bottom: 20px;">
+            <button id="add-btn">+ 새 메뉴 추가</button>
+        </div>
+
+        <div id="menu-list" class="menu-list">
+            <!-- Items will be loaded here -->
+        </div>
+    </div>
+
+    <!-- Edit/Add Modal -->
+    <div id="modal" class="modal hidden">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2 id="modal-title">메뉴 추가</h2>
+            <form id="menu-form">
+                <input type="hidden" id="edit-id">
+
+                <label>카테고리</label>
+                <select id="category">
+                    <option value="cocktail">Cocktail</option>
+                    <option value="highball">Highball</option>
+                    <option value="wine">Wine</option>
+                    <option value="whisky">Whisky</option>
+                    <option value="nonalc">Non-Alcohol</option>
+                    <option value="food">Food</option>
+                </select>
+
+                <label>이름 (한글)</label>
+                <input type="text" id="name_ko" required>
+
+                <label>이름 (영어)</label>
+                <input type="text" id="name_en">
+
+                <label>가격</label>
+                <input type="number" id="price" required>
+
+                <label>설명</label>
+                <textarea id="note" rows="3"></textarea>
+
+                <label>태그 (쉼표로 구분)</label>
+                <input type="text" id="tags" placeholder="예: 달달함, 시그니처">
+
+                <div id="scale-options">
+                    <h4>맛 그래프 (0~3)</h4>
+                    <div style="display:flex; gap:10px;">
+                        <div>당도 <input type="number" id="sweetness" min="0" max="3" value="0"></div>
+                        <div>산미 <input type="number" id="acidity" min="0" max="3" value="0"></div>
+                        <div>바디 <input type="number" id="body" min="0" max="3" value="0"></div>
+                    </div>
+                    <div style="display:flex; gap:10px;">
+                        <div>피트 <input type="number" id="peat" min="0" max="3" value="0"></div>
+                        <div>쉐리 <input type="number" id="sherry" min="0" max="3" value="0"></div>
+                    </div>
+                </div>
+
+                <button type="submit" style="width:100%; margin-top:20px;">저장</button>
+            </form>
+        </div>
+    </div>
+
+    <script type="module">
+        import firebaseConfig from './firebase-config.js';
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+        import { getAuth, signInWithEmailAndPassword, signOut, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
+        import { getFirestore, collection, getDocs, addDoc, updateDoc, deleteDoc, doc, query, orderBy } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
+
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth(app);
+        const db = getFirestore(app);
+
+        // Initial Data for Upload
+        const initialMenuData = {
+            cocktail: [
+                { name_ko: "루아 시그니처 칵테일", name_en: "LUA Signature Cocktail", price: 14000, note: "달콤한 과일 향과 가벼운 산미, 처음 칵테일을 드시는 분도 편하게 즐길 수 있는 잔.", tags: ["달달함", "시그니처", "초보자 추천"], peat: 0, sherry: 0 },
+                { name_ko: "애플 마티니", name_en: "Apple Martini", price: 13000, note: "사과 향이 선명하고 산뜻한 단맛, 깔끔하게 떨어지는 마무리.", tags: ["달달함", "상큼함"], peat: 0, sherry: 0 },
+                { name_ko: "마가리타", name_en: "Margarita", price: 13000, note: "라임의 산미와 소금 림이 어우러지는 클래식 테킬라 칵테일.", tags: ["산미", "클래식"], peat: 0, sherry: 0 }
+            ],
+            highball: [
+                { name_ko: "시나몬 하이볼", name_en: "Cinnamon Highball", price: 12000, note: "탄산감 위에 시나몬 향이 은은하게 올라오는 달콤한 하이볼.", tags: ["달달함", "초보자 추천"], peat: 0, sherry: 0 },
+                { name_ko: "클래식 하이볼", name_en: "Classic Whisky Highball", price: 11000, note: "탄산수와 위스키 본연의 곡물 향이 살아 있는 기본 하이볼.", tags: ["깔끔함"], peat: 1, sherry: 0 }
+            ],
+            wine: [
+                { name_ko: "산타 알리샤 까베르네 소비뇽", name_en: "Santa Alicia Cabernet Sauvignon", price: 46000, note: "검붉은 과일 향과 부드러운 탄닌, 고기와 잘 어울리는 드라이 레드.", tags: ["드라이", "고기 잘 어울림"], sweetness: 1, acidity: 2, body: 2, peat: 0, sherry: 0 },
+                { name_ko: "샤르도네 하우스 와인", name_en: "House Chardonnay", price: 42000, note: "부드러운 열대과일 향과 크리미한 질감, 가볍게 즐기기 좋은 화이트.", tags: ["부드러움", "초보자 추천"], sweetness: 2, acidity: 2, body: 1, peat: 0, sherry: 0 }
+            ],
+            whisky: [
+                { name_ko: "라가불린 16년", name_en: "Lagavulin 16 Years", price: 22000, note: "강한 스모키와 바다 향, 두꺼운 바디감으로 진한 피트 위스키의 대표격.", tags: ["스모키", "피트 강함", "싱글 몰트"], sweetness: 1, body: 3, peat: 3, sherry: 0 },
+                { name_ko: "글렌드로낙 12년", name_en: "Glendronach 12 Years", price: 19000, note: "건과일과 다크 초콜릿 느낌의 진한 쉐리 풍미, 부드러운 단맛.", tags: ["쉐리", "달달함", "싱글 몰트"], sweetness: 2, body: 2, peat: 0, sherry: 3 },
+                { name_ko: "발베니 더블우드 12년", name_en: "The Balvenie DoubleWood 12 Years", price: 19000, note: "꿀과 바닐라, 부드러운 오크 향이 어우러진 균형 잡힌 몰트.", tags: ["달달함", "초보자 추천", "싱글 몰트"], sweetness: 2, body: 2, peat: 0, sherry: 1 }
+            ],
+            nonalc: [
+                { name_ko: "논알콜 자몽 칵테일", name_en: "Non-alcohol Grapefruit Cocktail", price: 12000, note: "자몽 특유의 쌉싸름한 향과 탄산이 어우러진 상큼한 무알콜 칵테일.", tags: ["상큼함", "논알콜"], peat: 0, sherry: 0 }
+            ],
+            food: [
+                { name_ko: "나초", name_en: "Nachos", price: 10000, note: "따뜻한 또띠아 칩에 치즈와 살사를 곁들인 가벼운 안주.", tags: ["가벼운 안주"] },
+                { name_ko: "소시지 & 포테이토", name_en: "Sausage & Potato", price: 10000, note: "구운 소시지와 감자를 함께 즐기는 플레이트.", tags: ["든든함"] },
+                { name_ko: "치즈·과일 플래터", name_en: "Cheese & Fruit Platter", price: 18000, note: "여러 가지 치즈와 제철 과일을 곁들인 와인 전용 플레이트.", tags: ["와인 잘 어울림"] },
+                { name_ko: "멜론 프로슈토", name_en: "Melon Prosciutto", price: 17000, note: "달콤한 멜론과 짭조름한 생햄의 클래식 조합.", tags: ["와인 잘 어울림", "가벼운 안주"] }
+            ]
+        };
+
+        // UI Elements
+        const loginScreen = document.getElementById('login-screen');
+        const adminScreen = document.getElementById('admin-screen');
+        const loginBtn = document.getElementById('login-btn');
+        const logoutBtn = document.getElementById('logout-btn');
+        const menuList = document.getElementById('menu-list');
+        const modal = document.getElementById('modal');
+        const closeBtn = document.querySelector('.close');
+        const addBtn = document.getElementById('add-btn');
+        const menuForm = document.getElementById('menu-form');
+        const initDbBtn = document.getElementById('init-db-btn');
+
+        // Auth State Listener
+        onAuthStateChanged(auth, (user) => {
+            if (user) {
+                loginScreen.classList.add('hidden');
+                adminScreen.classList.remove('hidden');
+                loadMenu();
+            } else {
+                loginScreen.classList.remove('hidden');
+                adminScreen.classList.add('hidden');
+            }
+        });
+
+        // Login
+        loginBtn.addEventListener('click', async () => {
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            try {
+                await signInWithEmailAndPassword(auth, email, password);
+            } catch (error) {
+                alert('로그인 실패: ' + error.message);
+            }
+        });
+
+        // Logout
+        logoutBtn.addEventListener('click', () => signOut(auth));
+
+        // Load Menu
+        async function loadMenu() {
+            menuList.innerHTML = '로딩 중...';
+            const q = query(collection(db, "menu"), orderBy("category"));
+            const querySnapshot = await getDocs(q);
+
+            menuList.innerHTML = '';
+            const items = [];
+            querySnapshot.forEach((doc) => {
+                items.push({ id: doc.id, ...doc.data() });
+            });
+
+            // Group by category
+            const categories = { cocktail: [], highball: [], wine: [], whisky: [], nonalc: [], food: [] };
+            items.forEach(item => {
+                if (categories[item.category]) categories[item.category].push(item);
+            });
+
+            Object.keys(categories).forEach(cat => {
+                if (categories[cat].length === 0) return;
+                const catHeader = document.createElement('h3');
+                catHeader.textContent = cat.toUpperCase();
+                catHeader.style.borderBottom = "2px solid #ddd";
+                catHeader.style.paddingTop = "20px";
+                menuList.appendChild(catHeader);
+
+                categories[cat].forEach(item => {
+                    const div = document.createElement('div');
+                    div.className = 'menu-item';
+                    div.innerHTML = `
+                    <div>
+                        <strong>${item.name_ko}</strong> (${item.name_en}) - ${item.price.toLocaleString()}원
+                    </div>
+                    <div>
+                        <button class="btn-sm btn-edit" data-id="${item.id}">수정</button>
+                        <button class="btn-sm btn-delete" data-id="${item.id}">삭제</button>
+                    </div>
+                `;
+                    menuList.appendChild(div);
+                });
+            });
+
+            // Add Event Listeners for Edit/Delete
+            document.querySelectorAll('.btn-edit').forEach(btn => {
+                btn.addEventListener('click', (e) => openEditModal(e.target.dataset.id, items));
+            });
+            document.querySelectorAll('.btn-delete').forEach(btn => {
+                btn.addEventListener('click', (e) => deleteItem(e.target.dataset.id));
+            });
+        }
+
+        // Initialize DB
+        initDbBtn.addEventListener('click', async () => {
+            if (!confirm('기본 데이터로 데이터베이스를 채우시겠습니까? 중복될 수 있습니다.')) return;
+            try {
+                for (const cat in initialMenuData) {
+                    for (const item of initialMenuData[cat]) {
+                        await addDoc(collection(db, "menu"), {
+                            category: cat,
+                            ...item
+                        });
+                    }
+                }
+                alert('업로드 완료!');
+                loadMenu();
+            } catch (e) {
+                alert('오류 발생: ' + e.message);
+            }
+        });
+
+        // Modal Logic
+        addBtn.addEventListener('click', () => {
+            document.getElementById('modal-title').textContent = "메뉴 추가";
+            menuForm.reset();
+            document.getElementById('edit-id').value = "";
+            modal.classList.remove('hidden');
+        });
+
+        closeBtn.addEventListener('click', () => modal.classList.add('hidden'));
+        window.addEventListener('click', (e) => { if (e.target == modal) modal.classList.add('hidden'); });
+
+        function openEditModal(id, items) {
+            const item = items.find(i => i.id === id);
+            if (!item) return;
+
+            document.getElementById('modal-title').textContent = "메뉴 수정";
+            document.getElementById('edit-id').value = id;
+            document.getElementById('category').value = item.category;
+            document.getElementById('name_ko').value = item.name_ko;
+            document.getElementById('name_en').value = item.name_en;
+            document.getElementById('price').value = item.price;
+            document.getElementById('note').value = item.note;
+            document.getElementById('tags').value = (item.tags || []).join(', ');
+
+            document.getElementById('sweetness').value = item.sweetness || 0;
+            document.getElementById('acidity').value = item.acidity || 0;
+            document.getElementById('body').value = item.body || 0;
+            document.getElementById('peat').value = item.peat || 0;
+            document.getElementById('sherry').value = item.sherry || 0;
+
+            modal.classList.remove('hidden');
+        }
+
+        // Save (Add/Edit)
+        menuForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const id = document.getElementById('edit-id').value;
+            const data = {
+                category: document.getElementById('category').value,
+                name_ko: document.getElementById('name_ko').value,
+                name_en: document.getElementById('name_en').value,
+                price: Number(document.getElementById('price').value),
+                note: document.getElementById('note').value,
+                tags: document.getElementById('tags').value.split(',').map(t => t.trim()).filter(t => t),
+                sweetness: Number(document.getElementById('sweetness').value),
+                acidity: Number(document.getElementById('acidity').value),
+                body: Number(document.getElementById('body').value),
+                peat: Number(document.getElementById('peat').value),
+                sherry: Number(document.getElementById('sherry').value)
+            };
+
+            try {
+                if (id) {
+                    await updateDoc(doc(db, "menu", id), data);
+                } else {
+                    await addDoc(collection(db, "menu"), data);
+                }
+                modal.classList.add('hidden');
+                loadMenu();
+            } catch (error) {
+                alert('저장 실패: ' + error.message);
+            }
+        });
+
+        async function deleteItem(id) {
+            if (!confirm('정말 삭제하시겠습니까?')) return;
+            try {
+                await deleteDoc(doc(db, "menu", id));
+                loadMenu();
+            } catch (error) {
+                alert('삭제 실패: ' + error.message);
+            }
+        }
+    </script>
+
+</body>
+
+</html>

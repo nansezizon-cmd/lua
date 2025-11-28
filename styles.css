@@ -111,12 +111,33 @@ body {
 }
 
 .menu-item {
-  padding: 8px 2px;
+  padding: 12px 2px;
   border-bottom: 1px dashed rgba(255, 255, 255, 0.08);
+  display: flex;
+  gap: 12px;
 }
 
 .menu-item:last-child {
   border-bottom: none;
+}
+
+.menu-img-wrap {
+  flex: 0 0 80px;
+  height: 80px;
+  border-radius: 8px;
+  overflow: hidden;
+  background: #222;
+}
+
+.menu-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.menu-content {
+  flex: 1;
+  min-width: 0;
 }
 
 .menu-header {
@@ -153,10 +174,11 @@ body {
   margin-top: 4px;
   font-size: 11px;
   color: rgba(245, 242, 234, 0.8);
+  line-height: 1.4;
 }
 
 .tag-row {
-  margin-top: 4px;
+  margin-top: 6px;
   display: flex;
   flex-wrap: wrap;
   gap: 4px;
@@ -232,4 +254,51 @@ footer {
   font-size: 10px;
   text-align: center;
   color: rgba(245, 242, 234, 0.5);
+}
+/* Image Modal */
+.image-modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.9);
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.image-modal.show {
+  display: flex;
+  opacity: 1;
+}
+
+.modal-content {
+  max-width: 90%;
+  max-height: 90%;
+  object-fit: contain;
+  border-radius: 8px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.5);
+}
+
+.modal-close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  color: #f5f2ea;
+  font-size: 30px;
+  font-weight: bold;
+  cursor: pointer;
+  z-index: 1001;
+  background: rgba(0, 0, 0, 0.5);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
 }
