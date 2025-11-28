@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <title>LUA BAR 모바일 메뉴</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="page">
+    <header class="header">
+      <div class="logo-wrap">
+        <img src="logo.jpg" alt="LUA BAR logo" />
+        <div class="bar-name">LUA BAR</div>
+      </div>
+      <nav class="index-nav" id="indexNav">
+        <button class="index-btn active" data-target="cocktail">COCKTAIL</button>
+        <button class="index-btn" data-target="highball">HIGHBALL</button>
+        <button class="index-btn" data-target="wine">WINE</button>
+        <button class="index-btn" data-target="whisky">WHISKY</button>
+        <button class="index-btn" data-target="nonalc">NON-ALCOHOL</button>
+        <button class="index-btn" data-target="food">FOOD</button>
+      </nav>
+    </header>
+
+    <section class="section" id="section-cocktail">
+      <div class="section-title">
+        <div class="section-title-line"></div>
+        <div class="section-title-text">COCKTAIL</div>
+        <div class="section-title-line"></div>
+      </div>
+      <div class="section-subtitle">칵테일 Cocktail · 르네상스 밤의 색을 담은 잔</div>
+      <div class="menu-list" id="list-cocktail"></div>
+    </section>
+
+    <section class="section" id="section-highball">
+      <div class="section-title">
+        <div class="section-title-line"></div>
+        <div class="section-title-text">HIGHBALL</div>
+        <div class="section-title-line"></div>
+      </div>
+      <div class="section-subtitle">하이볼 Highball · 가볍게 시작하는 한 잔</div>
+      <div class="menu-list" id="list-highball"></div>
+    </section>
+
+    <section class="section" id="section-wine">
+      <div class="section-title">
+        <div class="section-title-line"></div>
+        <div class="section-title-text">WINE</div>
+        <div class="section-title-line"></div>
+      </div>
+      <div class="section-subtitle">와인 Wine · 병 기준, 잔 와인은 직원에게 문의</div>
+      <div class="menu-list" id="list-wine"></div>
+    </section>
+
+    <section class="section" id="section-whisky">
+      <div class="section-title">
+        <div class="section-title-line"></div>
+        <div class="section-title-text">WHISKY</div>
+        <div class="section-title-line"></div>
+      </div>
+      <div class="section-subtitle">위스키 Whisky · 스트레이트 / 온더락 / 하이볼 선택 가능</div>
+      <div class="menu-list" id="list-whisky"></div>
+    </section>
+
+    <section class="section" id="section-nonalc">
+      <div class="section-title">
+        <div class="section-title-line"></div>
+        <div class="section-title-text">NON-ALCOHOL</div>
+        <div class="section-title-line"></div>
+      </div>
+      <div class="section-subtitle">논알콜 Non-alcohol · 술 없이 분위기만 즐기고 싶은 분께</div>
+      <div class="menu-list" id="list-nonalc"></div>
+    </section>
+
+    <section class="section" id="section-food">
+      <div class="section-title">
+        <div class="section-title-line"></div>
+        <div class="section-title-text">FOOD</div>
+        <div class="section-title-line"></div>
+      </div>
+      <div class="section-subtitle">푸드 Food · 술과 함께 나누기 좋은 가벼운 플레이트</div>
+      <div class="menu-list" id="list-food"></div>
+    </section>
+
+    <footer>
+      메뉴와 가격은 매장 상황에 따라 변동될 수 있습니다.<br />
+      자세한 내용은 직원에게 문의해 주세요.
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
