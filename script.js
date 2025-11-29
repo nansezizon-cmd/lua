@@ -84,30 +84,36 @@ const menuData = {
   ],
   highball: [
     {
+      name_ko: "짐빔 하이볼",
+      name_en: "Jim Beam Highball",
+      price: 9000,
+      note: "버번 위스키의 대명사 짐빔의 고소함과 청량감.",
+      tags: ["고소함", "청량감", "가성비"],
+      image: "짐빔하이볼.png"
+    },
+    {
       name_ko: "얼그레이 하이볼",
       name_en: "Earl Grey Highball",
-      price: 12000,
+      price: 10000,
       note: "진한 얼그레이 시럽의 향긋함과 위스키의 조화.",
       tags: ["달달함", "인기", "향긋함"],
       image: "얼그레이하이볼.png"
     },
     {
-      name_ko: "시나몬 하이볼",
-      name_en: "Cinnamon Highball",
-      price: 12000,
-      note: "탄산감 위에 시나몬 향이 은은하게 올라오는 달콤한 하이볼.",
-      tags: ["달달함", "초보자 추천"],
-      peat: 0,
-      sherry: 0
+      name_ko: "제임슨 하이볼",
+      name_en: "Jameson Highball",
+      price: 11000,
+      note: "부드러운 아이리쉬 위스키 제임슨을 베이스로 한 깔끔한 하이볼.",
+      tags: ["깔끔함", "부드러움"],
+      image: "제임슨하이볼.png"
     },
     {
-      name_ko: "클래식 하이볼",
-      name_en: "Classic Whisky Highball",
-      price: 11000,
-      note: "탄산수와 위스키 본연의 곡물 향이 살아 있는 기본 하이볼.",
-      tags: ["깔끔함"],
-      peat: 1,
-      sherry: 0
+      name_ko: "잭다니엘 하이볼",
+      name_en: "Jack Daniel's Highball",
+      price: 12000,
+      note: "잭다니엘의 달콤한 바닐라 향과 탄산의 조화.",
+      tags: ["바닐라향", "달콤함"],
+      image: "잭다니엘하이볼.png"
     }
   ],
   wine: [
@@ -179,37 +185,52 @@ const menuData = {
   ],
   whisky: [
     {
-      name_ko: "라가불린 16년",
-      name_en: "Lagavulin 16 Years",
-      price: 22000,
-      note: "강한 스모키와 바다 향, 두꺼운 바디감으로 진한 피트 위스키의 대표격.",
-      tags: ["스모키", "피트 강함", "싱글 몰트"],
-      sweetness: 1,
-      body: 3,
-      peat: 3,
-      sherry: 0
+      name_ko: "발렌타인 12년",
+      name_en: "Ballantine's 12 Years",
+      price: 10000,
+      note: "부드러운 목 넘김과 달콤한 풍미. 대중적 사랑. (블렌디드, 40%)",
+      tags: ["블렌디드", "입문용", "달콤함"],
+      image: "발렌타인12.png"
     },
     {
-      name_ko: "글렌드로낙 12년",
-      name_en: "Glendronach 12 Years",
-      price: 19000,
-      note: "건과일과 다크 초콜릿 느낌의 진한 쉐리 풍미, 부드러운 단맛.",
-      tags: ["쉐리", "달달함", "싱글 몰트"],
-      sweetness: 2,
-      body: 2,
-      peat: 0,
-      sherry: 3
+      name_ko: "조니워커 블랙 라벨",
+      name_en: "Johnnie Walker Black Label",
+      price: 10000,
+      note: "스모키함과 깊은 복합미. 클래식한 선택. (블렌디드, 40%)",
+      tags: ["블렌디드", "스모키", "클래식"],
+      image: "조니워커블랙라벨.png"
     },
     {
-      name_ko: "발베니 더블우드 12년",
-      name_en: "The Balvenie DoubleWood 12 Years",
-      price: 19000,
-      note: "꿀과 바닐라, 부드러운 오크 향이 어우러진 균형 잡힌 몰트.",
-      tags: ["달달함", "초보자 추천", "싱글 몰트"],
-      sweetness: 2,
-      body: 2,
-      peat: 0,
-      sherry: 1
+      name_ko: "글렌피딕 12년",
+      name_en: "Glenfiddich 12 Years",
+      price: 16000,
+      note: "부드러운 사과와 배 향. 입문/데일리 싱글 몰트. (싱글 몰트, 40%)",
+      tags: ["싱글 몰트", "과일향", "부드러움"],
+      image: "글렉피딕12.png"
+    },
+    {
+      name_ko: "맥캘란 12년 더블 캐스크",
+      name_en: "The Macallan 12 Years Double Cask",
+      price: 20000,
+      note: "셰리 오크통 숙성. 깊은 과일과 스파이시함. 럭셔리 싱글 몰트. (싱글 몰트, 40%)",
+      tags: ["싱글 몰트", "셰리", "럭셔리"],
+      image: "맥캘란12더블캐스크.png"
+    },
+    {
+      name_ko: "잭 다니엘스 No.7",
+      name_en: "Jack Daniel's No.7",
+      price: 8000,
+      note: "바닐라, 캐러멜 향. 스트레이트와 온더락으로 인기. (테네시, 40%)",
+      tags: ["테네시", "바닐라", "인기"],
+      image: "잭다니엘7.png"
+    },
+    {
+      name_ko: "제임슨 아이리쉬 위스키",
+      name_en: "Jameson Irish Whiskey",
+      price: 8000,
+      note: "부드러운 목 넘김. 편안하게 즐기기 좋음. (아이리쉬, 40%)",
+      tags: ["아이리쉬", "부드러움", "가성비"],
+      image: "제임슨아이리쉬위스키.png"
     }
   ],
   nonalc: [
