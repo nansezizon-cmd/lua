@@ -215,16 +215,22 @@ const menuData = {
       image: "제임슨아이리쉬위스키.png"
     }
   ],
-  nonalc: [
+  beer: [
     {
-      category: "Non-Alcohol",
-      name_ko: "논알콜 자몽 칵테일",
-      name_en: "Non-alcohol Grapefruit Cocktail",
+      name_ko: "기네스",
+      name_en: "Guinness",
       price: 12000,
-      note: "자몽 특유의 쌉싸름한 향과 탄산이 어우러진 상큼한 무알콜 칵테일.",
-      tags: ["상큼함", "논알콜"],
-      peat: 0,
-      sherry: 0
+      note: "오래 로스팅한 맥아를 사용, 진한 루비색을 띤 은은히 풍기는 맥아향과 커피향의 조화를 이룬 맥주. (4.2%/330ml/아일랜드)",
+      tags: ["흑맥주", "커피향", "아일랜드"],
+      image: "기네스.png"
+    },
+    {
+      name_ko: "하이네켄",
+      name_en: "Heineken",
+      price: 10000,
+      note: "쌉싸름한 탄산감과 맑고 깨끗한 맛에서 나오는 시원한 청량감이 매력적인 맥주. (5%/330ml/네덜란드)",
+      tags: ["라거", "청량감", "네덜란드"],
+      image: "하이네켄.jpg"
     }
   ],
   food: [
