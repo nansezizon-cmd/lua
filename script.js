@@ -185,7 +185,7 @@ const menuData = {
       price: "19,900 / 229,000",
       note: "강렬한 피트 향과 바다의 풍미. 호불호가 갈리는 매니아의 위스키.",
       tags: ["싱글 몰트", "피트", "스모키"],
-      image: "라프로익10.png"
+      image: "라프로익 10년.png"
     },
     {
       category: "Bourbon",
@@ -212,7 +212,7 @@ const menuData = {
       price: "11,900 / 139,000",
       note: "부드럽고 달콤한 아일랜드 위스키. 누구나 즐기기 좋은 맛.",
       tags: ["아이리쉬", "부드러움", "가성비"],
-      image: "제임슨.png"
+      image: "제임슨아이리쉬위스키.png"
     }
   ],
   nonalc: [
