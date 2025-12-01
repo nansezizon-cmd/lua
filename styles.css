@@ -302,3 +302,14 @@ footer {
   justify-content: center;
   line-height: 1;
 }
+
+/* Category Header */
+.category-header {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--accent-color);
+  margin-top: 24px;
+  margin-bottom: 12px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}

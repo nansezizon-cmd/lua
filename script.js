@@ -2,54 +2,61 @@
 const menuData = {
   cocktail: [
     {
+      category: "Classic",
+      name_ko: "마티니",
+      name_en: "Martini",
+      price: 15900,
+      note: "칵테일의 왕. 드라이 진과 드라이 베르무트의 깔끔한 맛.",
+      tags: ["클래식", "도수 높음", "드라이"],
+      image: "마티니.png"
+    },
+    {
+      category: "Classic",
+      name_ko: "네그로니",
+      name_en: "Negroni",
+      price: 15900,
+      note: "진, 캄파리, 스위트 베르무트의 달콤쌉쌀한 밸런스.",
+      tags: ["클래식", "도수 높음", "쌉쌀함"],
+      image: "네그로니.png"
+    },
+    {
+      category: "Classic",
       name_ko: "갓파더",
       name_en: "Godfather",
-      price: 14900,
+      price: 13900,
       note: "위스키와 아마레또의 중후한 조화, 시나몬 향이 매력적인 칵테일.",
       tags: ["도수 높음", "시나몬", "중후함"],
       image: "갓파더.png"
     },
     {
-      name_ko: "네그로니",
-      name_en: "Negroni",
-      price: 14900,
-      note: "진, 캄파리, 스위트 베르무트의 달콤쌉쌀한 밸런스.",
-      tags: ["식전주", "쌉쌀함", "클래식"],
-      image: "네그로니.png"
-    },
-    {
-      name_ko: "데킬라 선라이즈",
-      name_en: "Tequila Sunrise",
-      price: 11900,
-      note: "오렌지 주스와 석류 시럽이 만들어내는 일출 같은 색감.",
-      tags: ["달달함", "예쁨", "상큼함"],
-      image: "데킬라선라이즈.png"
-    },
-    {
-      name_ko: "롱 아일랜드 아이스 티",
-      name_en: "Long Island Iced Tea",
+      category: "Classic",
+      name_ko: "올드 패션드",
+      name_en: "Old Fashioned",
       price: 13900,
-      note: "홍차 맛이 나지만 4가지 술이 들어간 도수 높은 칵테일.",
-      tags: ["도수 높음", "양 많음", "가성비"],
+      note: "위스키 칵테일의 클래식. 묵직하고 달콤한 풍미.",
+      tags: ["클래식", "도수 높음", "위스키 베이스"],
+      image: "올드패션드.png"
+    },
+    {
+      category: "Classic",
+      name_ko: "마가리타",
+      name_en: "Margarita",
+      price: 13900,
+      note: "데킬라 베이스의 상큼하고 짭짤한 클래식 칵테일.",
+      tags: ["상큼함", "클래식", "소금"],
+      image: "마가리타.jpg"
+    },
+    {
+      category: "Classic",
+      name_ko: "롱 아일랜드 아이스티",
+      name_en: "Long Island Iced Tea",
+      price: 15900,
+      note: "보드카, 럼, 진, 데킬라가 들어간 강력한 아이스티 맛 칵테일.",
+      tags: ["도수 높음", "파티", "아이스티"],
       image: "롱아이일랜드아이스티.png"
     },
     {
-      name_ko: "모스크 뮬",
-      name_en: "Moscow Mule",
-      price: 13900,
-      note: "보드카와 진저비어, 라임의 시원하고 알싸한 청량감.",
-      tags: ["상큼함", "탄산", "구리잔"],
-      image: "모스크뮬.png"
-    },
-    {
-      name_ko: "미도리 사워",
-      name_en: "Midori Sour",
-      price: 12900,
-      note: "멜론 리큐르의 달콤함과 레몬의 상큼함이 어우러진 칵테일.",
-      tags: ["달달함", "초보자 추천", "멜론맛"],
-      image: "미도리사워.png"
-    },
-    {
+      category: "Classic",
       name_ko: "블랙 러시안",
       name_en: "Black Russian",
       price: 12900,
@@ -58,6 +65,34 @@ const menuData = {
       image: "블랙러시안.png"
     },
     {
+      category: "Classic",
+      name_ko: "모스크 뮬",
+      name_en: "Moscow Mule",
+      price: 12900,
+      note: "보드카와 진저비어, 라임의 시원하고 알싸한 청량감.",
+      tags: ["상큼함", "탄산", "구리잔"],
+      image: "모스크뮬.png"
+    },
+    {
+      category: "Classic",
+      name_ko: "진 토닉",
+      name_en: "Gin & Tonic",
+      price: 11900,
+      note: "프리미엄 진과 토닉워터, 라임이 어우러진 깔끔한 맛.",
+      tags: ["깔끔함", "기본", "시원함"],
+      image: "진토닉.png"
+    },
+    {
+      category: "Classic",
+      name_ko: "데킬라 선라이즈",
+      name_en: "Tequila Sunrise",
+      price: 11900,
+      note: "데킬라와 오렌지 주스, 그레나딘 시럽이 만드는 일출의 색감.",
+      tags: ["상큼함", "예쁨", "오렌지"],
+      image: "데킬라선라이즈.png"
+    },
+    {
+      category: "Modern Twist",
       name_ko: "옥보단",
       name_en: "Okbodan",
       price: 12900,
@@ -66,30 +101,23 @@ const menuData = {
       image: "옥보단.png"
     },
     {
-      name_ko: "올드 패션드",
-      name_en: "Old Fashioned",
-      price: 14900,
-      note: "위스키 칵테일의 클래식. 묵직하고 달콤한 풍미.",
-      tags: ["클래식", "도수 높음", "위스키 베이스"],
-      image: "올드패션드.png"
-    },
-    {
-      name_ko: "진 토닉",
-      name_en: "Gin & Tonic",
-      price: 11900,
-      note: "프리미엄 진과 토닉워터, 라임이 어우러진 깔끔한 맛.",
-      tags: ["깔끔함", "기본", "시원함"],
-      image: "진토닉.png"
+      category: "Modern Twist",
+      name_ko: "메로나 사워",
+      name_en: "Melona Sour",
+      price: 9900,
+      note: "달콤한 메론 맛과 부드러운 거품이 어우러진 시그니처 칵테일.",
+      tags: ["시그니처", "달달함", "메론맛"],
+      image: "메론사워.png"
     }
   ],
   highball: [
     {
-      name_ko: "짐빔 하이볼",
-      name_en: "Jim Beam Highball",
-      price: 9900,
-      note: "버번 위스키의 대명사 짐빔의 고소함과 청량감.",
-      tags: ["고소함", "청량감", "가성비"],
-      image: "짐빔하이볼.png"
+      name_ko: "산토리 가쿠빈 하이볼",
+      name_en: "Suntory Kakubin Highball",
+      price: 10900,
+      note: "하이볼의 원조, 산토리 위스키의 깔끔하고 청량한 맛.",
+      tags: ["깔끔함", "청량감", "오리지널"],
+      image: "산토리하이볼.png"
     },
     {
       name_ko: "얼그레이 하이볼",
@@ -100,66 +128,36 @@ const menuData = {
       image: "얼그레이하이볼.png"
     },
     {
-      name_ko: "제임슨 하이볼",
-      name_en: "Jameson Highball",
-      price: 11900,
-      note: "부드러운 아이리쉬 위스키 제임슨을 베이스로 한 깔끔한 하이볼.",
-      tags: ["깔끔함", "부드러움"],
-      image: "제임슨하이볼.png"
+      name_ko: "제임슨 진저 하이볼",
+      name_en: "Jameson Ginger Highball",
+      price: 10900,
+      note: "제임슨 위스키와 진저에일의 달콤하고 알싸한 조화.",
+      tags: ["달달함", "알싸함", "인기"],
+      image: "제임슨진저하이볼.png"
     },
     {
-      name_ko: "잭다니엘 하이볼",
-      name_en: "Jack Daniel's Highball",
-      price: 12900,
-      note: "잭다니엘의 달콤한 바닐라 향과 탄산의 조화.",
-      tags: ["바닐라향", "달콤함"],
-      image: "잭다니엘하이볼.png"
+      name_ko: "잭 콕",
+      name_en: "Jack Coke",
+      price: 10900,
+      note: "잭 다니엘과 콜라의 환상적인 조합. 달콤하고 시원한 클래식.",
+      tags: ["달달함", "콜라", "클래식"],
+      image: "잭다니엘7.png"
+    },
+    {
+      name_ko: "콥케 포트 토닉",
+      name_en: "Kopke Port Tonic",
+      price: 10900,
+      note: "달콤한 포트 와인과 토닉워터의 색다른 만남.",
+      tags: ["달달함", "와인 베이스", "이색적"],
+      image: "콥케 루비 포트.png"
     }
   ],
   wine: [
     {
-      name_ko: "몬테스 알파 카베르네 소비뇽",
-      name_en: "Montes Alpha Cabernet Sauvignon",
-      price: 59000,
-      note: "칠레 프리미엄 레드 와인의 정석. 진한 과실 향과 부드러운 오크 풍미.",
-      tags: ["레드", "드라이", "베스트셀러"],
-      sweetness: 1,
-      acidity: 2,
-      body: 3,
-      peat: 0,
-      sherry: 0,
-      image: "몬테스 알파 카베르네 소비뇽.png"
-    },
-    {
-      name_ko: "클라우디 베이 소비뇽 블랑",
-      name_en: "Cloudy Bay Sauvignon Blanc",
-      price: 89000,
-      note: "뉴질랜드 소비뇽 블랑의 기준. 폭발적인 열대과일 향과 산뜻한 산미.",
-      tags: ["화이트", "상큼함", "프리미엄"],
-      sweetness: 1,
-      acidity: 3,
-      body: 2,
-      peat: 0,
-      sherry: 0,
-      image: "클라우디 베이 소비뇽 블랑.png"
-    },
-    {
-      name_ko: "반피 로사 리갈 브라케토 다퀴",
-      name_en: "Banfi Rosa Regale Brachetto d'Acqui",
-      price: 65000,
-      note: "장미 향과 딸기 향이 가득한 달콤한 스파클링 레드 와인.",
-      tags: ["스파클링", "달달함", "로맨틱"],
-      sweetness: 3,
-      acidity: 2,
-      body: 1,
-      peat: 0,
-      sherry: 0,
-      image: "반피 로사 리갈 브라케토 다퀴.png"
-    },
-    {
-      name_ko: "콥케 루비 포트",
-      name_en: "Kopke Ruby Port",
-      price: 49000,
+      category: "Port",
+      name_ko: "콥케 포트 (루비/화이트)",
+      name_en: "Kopke Port",
+      price: "9,900 / 63,900",
       note: "달콤하고 진한 포트 와인. 디저트나 치즈와 환상적인 궁합.",
       tags: ["포트", "달달함", "도수 높음"],
       sweetness: 3,
@@ -168,73 +166,58 @@ const menuData = {
       peat: 0,
       sherry: 0,
       image: "콥케 루비 포트.png"
-    },
-    {
-      name_ko: "옐로우테일 샤르도네",
-      name_en: "Yellow Tail Chardonnay",
-      price: 35000,
-      note: "호주의 대중적인 화이트 와인. 신선한 복숭아 향과 부드러운 바닐라 터치.",
-      tags: ["화이트", "가성비", "부드러움"],
-      sweetness: 2,
-      acidity: 2,
-      body: 2,
-      peat: 0,
-      sherry: 0,
-      image: "옐로우테일 샤르도네.png"
     }
   ],
   whisky: [
     {
-      name_ko: "발렌타인 12년",
-      name_en: "Ballantine's 12 Years",
-      price: 10900,
-      note: "부드러운 목 넘김과 달콤한 풍미. 대중적 사랑. (블렌디드, 40%)",
-      tags: ["블렌디드", "입문용", "달콤함"],
-      image: "발렌타인12.png"
+      category: "Single Malt",
+      name_ko: "글렌피딕 12년 (Glass)",
+      name_en: "Glenfiddich 12 Years",
+      price: "21,900 / 259,000",
+      note: "세계에서 가장 사랑받는 싱글 몰트. 서양배의 신선한 향.",
+      tags: ["싱글 몰트", "과일향", "입문용"],
+      image: "글렉피딕12.png"
     },
     {
+      category: "Single Malt",
+      name_ko: "라프로익 10년",
+      name_en: "Laphroaig 10 Years",
+      price: "19,900 / 229,000",
+      note: "강렬한 피트 향과 바다의 풍미. 호불호가 갈리는 매니아의 위스키.",
+      tags: ["싱글 몰트", "피트", "스모키"],
+      image: "라프로익10.png"
+    },
+    {
+      category: "Bourbon",
+      name_ko: "메이커스 마크",
+      name_en: "Maker's Mark",
+      price: "16,900 / 189,000",
+      note: "붉은 밀랍 봉인의 프리미엄 버번 위스키. 부드러운 바닐라와 카라멜 향.",
+      tags: ["버번", "부드러움", "바닐라"],
+      image: "메이커스마크.png"
+    },
+    {
+      category: "Blended",
       name_ko: "조니워커 블랙 라벨",
       name_en: "Johnnie Walker Black Label",
-      price: 10900,
+      price: "13,900 / 179,000",
       note: "스모키함과 깊은 복합미. 클래식한 선택. (블렌디드, 40%)",
       tags: ["블렌디드", "스모키", "클래식"],
       image: "조니워커블랙라벨.png"
     },
     {
-      name_ko: "글렌피딕 12년",
-      name_en: "Glenfiddich 12 Years",
-      price: 16900,
-      note: "부드러운 사과와 배 향. 입문/데일리 싱글 몰트. (싱글 몰트, 40%)",
-      tags: ["싱글 몰트", "과일향", "부드러움"],
-      image: "글렉피딕12.png"
-    },
-    {
-      name_ko: "맥캘란 12년 더블 캐스크",
-      name_en: "The Macallan 12 Years Double Cask",
-      price: 21900,
-      note: "셰리 오크통 숙성. 깊은 과일과 스파이시함. 럭셔리 싱글 몰트. (싱글 몰트, 40%)",
-      tags: ["싱글 몰트", "셰리", "럭셔리"],
-      image: "맥캘란12더블캐스크.png"
-    },
-    {
-      name_ko: "잭 다니엘스 No.7",
-      name_en: "Jack Daniel's No.7",
-      price: 8900,
-      note: "바닐라, 캐러멜 향. 스트레이트와 온더락으로 인기. (테네시, 40%)",
-      tags: ["테네시", "바닐라", "인기"],
-      image: "잭다니엘7.png"
-    },
-    {
-      name_ko: "제임슨 아이리쉬 위스키",
-      name_en: "Jameson Irish Whiskey",
-      price: 8900,
-      note: "부드러운 목 넘김. 편안하게 즐기기 좋음. (아이리쉬, 40%)",
+      category: "Irish",
+      name_ko: "제임슨",
+      name_en: "Jameson",
+      price: "11,900 / 139,000",
+      note: "부드럽고 달콤한 아일랜드 위스키. 누구나 즐기기 좋은 맛.",
       tags: ["아이리쉬", "부드러움", "가성비"],
-      image: "제임슨아이리쉬위스키.png"
+      image: "제임슨.png"
     }
   ],
   nonalc: [
     {
+      category: "Non-Alcohol",
       name_ko: "논알콜 자몽 칵테일",
       name_en: "Non-alcohol Grapefruit Cocktail",
       price: 12000,
@@ -245,6 +228,14 @@ const menuData = {
     }
   ],
   food: [
+    {
+      name_ko: "통구이 허니브리 치즈",
+      name_en: "Roasted Honey Brie Cheese",
+      price: 18900,
+      note: "통째로 구운 브리 치즈 위에 꿀과 견과류를 듬뿍 올린 메뉴.",
+      tags: ["달콤함"],
+      image: "통구이 허니브리 치즈.png"
+    },
     {
       name_ko: "치즈 호두마루",
       name_en: "Cheese Walnut Maru",
@@ -260,14 +251,6 @@ const menuData = {
       note: "그냥 시원한 샤인 머스켓 샤베트에 코코넛 믹스에요 ㅋ",
       tags: ["와인 잘 어울림", "여럿이서"],
       image: "샤코.png"
-    },
-    {
-      name_ko: "통구이 허니브리 치즈",
-      name_en: "Roasted Honey Brie Cheese",
-      price: 18900,
-      note: "통째로 구운 브리 치즈 위에 꿀과 견과류를 듬뿍 올린 메뉴.",
-      tags: ["달콤함"],
-      image: "통구이 허니브리 치즈.png"
     }
   ]
 };
@@ -287,7 +270,19 @@ function renderCategory(key) {
   const items = menuData[key] || [];
   listEl.innerHTML = "";
 
+  // Group items by category
+  let currentCategory = "";
+
   items.forEach(item => {
+    // Insert category header if changed
+    if (item.category && item.category !== currentCategory) {
+      currentCategory = item.category;
+      const headerDiv = document.createElement("div");
+      headerDiv.className = "category-header";
+      headerDiv.textContent = currentCategory;
+      listEl.appendChild(headerDiv);
+    }
+
     const div = document.createElement("div");
     div.className = "menu-item";
 
@@ -330,7 +325,7 @@ function renderCategory(key) {
             <div class="menu-name-ko">${item.name_ko}</div>
             <div class="menu-name-en">${item.name_en}</div>
           </div>
-          <div class="menu-price">${item.price.toLocaleString()}</div>
+          <div class="menu-price">${typeof item.price === 'number' ? item.price.toLocaleString() : item.price}</div>
         </div>
         <div class="menu-note">${item.note}</div>
         <div class="tag-row">${tagHtml}</div>
