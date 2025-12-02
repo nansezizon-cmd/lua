@@ -2,28 +2,28 @@
 const menuData = {
   cocktail: [
     {
-      category: "Classic",
-      name_ko: "마티니",
-      name_en: "Martini",
-      price: 15900,
-      note: "칵테일의 왕. 드라이 진과 드라이 베르무트의 깔끔한 맛.",
-      tags: ["클래식", "도수 높음", "드라이"],
-      image: "마티니.png"
+      category: "Modern Twist",
+      name_ko: "메로나 사워",
+      name_en: "Melona Sour",
+      price: 10000,
+      note: "달콤한 메론 맛과 부드러운 거품이 어우러진 시그니처 칵테일.",
+      tags: ["시그니처", "달달함", "메론맛"],
+      image: "메론사워.png"
     },
     {
-      category: "Classic",
-      name_ko: "네그로니",
-      name_en: "Negroni",
-      price: 15900,
-      note: "진, 캄파리, 스위트 베르무트의 달콤쌉쌀한 밸런스.",
-      tags: ["클래식", "도수 높음", "쌉쌀함"],
-      image: "네그로니.png"
+      category: "Modern Twist",
+      name_ko: "옥보단",
+      name_en: "Okbodan",
+      price: 13000,
+      note: "잔 테두리의 설탕과 함께 즐기는 새콤달콤한 과일 맛.",
+      tags: ["달달함", "여성 취향", "예쁨"],
+      image: "옥보단.png"
     },
     {
       category: "Classic",
       name_ko: "갓파더",
       name_en: "Godfather",
-      price: 13900,
+      price: 13000,
       note: "위스키와 아마레또의 중후한 조화, 시나몬 향이 매력적인 칵테일.",
       tags: ["도수 높음", "시나몬", "중후함"],
       image: "갓파더.png"
@@ -32,25 +32,43 @@ const menuData = {
       category: "Classic",
       name_ko: "올드 패션드",
       name_en: "Old Fashioned",
-      price: 13900,
+      price: 13000,
       note: "위스키 칵테일의 클래식. 묵직하고 달콤한 풍미.",
       tags: ["클래식", "도수 높음", "위스키 베이스"],
       image: "올드패션드.png"
     },
     {
       category: "Classic",
+      name_ko: "네그로니",
+      name_en: "Negroni",
+      price: 16000,
+      note: "진, 캄파리, 스위트 베르무트의 달콤쌉쌀한 밸런스.",
+      tags: ["클래식", "도수 높음", "쌉쌀함"],
+      image: "네그로니.png"
+    },
+    {
+      category: "Classic",
       name_ko: "마가리타",
       name_en: "Margarita",
-      price: 13900,
+      price: 14000,
       note: "데킬라 베이스의 상큼하고 짭짤한 클래식 칵테일.",
       tags: ["상큼함", "클래식", "소금"],
       image: "마가리타.jpg"
     },
     {
       category: "Classic",
+      name_ko: "데킬라 선라이즈",
+      name_en: "Tequila Sunrise",
+      price: 12000,
+      note: "데킬라와 오렌지 주스, 그레나딘 시럽이 만드는 일출의 색감.",
+      tags: ["상큼함", "예쁨", "오렌지"],
+      image: "데킬라선라이즈.png"
+    },
+    {
+      category: "Classic",
       name_ko: "롱 아일랜드 아이스티",
       name_en: "Long Island Iced Tea",
-      price: 15900,
+      price: 15000,
       note: "보드카, 럼, 진, 데킬라가 들어간 강력한 아이스티 맛 칵테일.",
       tags: ["도수 높음", "파티", "아이스티"],
       image: "롱아이일랜드아이스티.png"
@@ -59,7 +77,7 @@ const menuData = {
       category: "Classic",
       name_ko: "블랙 러시안",
       name_en: "Black Russian",
-      price: 12900,
+      price: 13000,
       note: "보드카와 커피 리큐르의 진하고 달콤한 맛.",
       tags: ["도수 높음", "달달함", "커피향"],
       image: "블랙러시안.png"
@@ -68,7 +86,7 @@ const menuData = {
       category: "Classic",
       name_ko: "모스크 뮬",
       name_en: "Moscow Mule",
-      price: 12900,
+      price: 13000,
       note: "보드카와 진저비어, 라임의 시원하고 알싸한 청량감.",
       tags: ["상큼함", "탄산", "구리잔"],
       image: "모스크뮬.png"
@@ -77,44 +95,17 @@ const menuData = {
       category: "Classic",
       name_ko: "진 토닉",
       name_en: "Gin & Tonic",
-      price: 11900,
+      price: 12000,
       note: "프리미엄 진과 토닉워터, 라임이 어우러진 깔끔한 맛.",
       tags: ["깔끔함", "기본", "시원함"],
       image: "진토닉.png"
-    },
-    {
-      category: "Classic",
-      name_ko: "데킬라 선라이즈",
-      name_en: "Tequila Sunrise",
-      price: 11900,
-      note: "데킬라와 오렌지 주스, 그레나딘 시럽이 만드는 일출의 색감.",
-      tags: ["상큼함", "예쁨", "오렌지"],
-      image: "데킬라선라이즈.png"
-    },
-    {
-      category: "Modern Twist",
-      name_ko: "옥보단",
-      name_en: "Okbodan",
-      price: 12900,
-      note: "잔 테두리의 설탕과 함께 즐기는 새콤달콤한 과일 맛.",
-      tags: ["달달함", "여성 취향", "예쁨"],
-      image: "옥보단.png"
-    },
-    {
-      category: "Modern Twist",
-      name_ko: "메로나 사워",
-      name_en: "Melona Sour",
-      price: 9900,
-      note: "달콤한 메론 맛과 부드러운 거품이 어우러진 시그니처 칵테일.",
-      tags: ["시그니처", "달달함", "메론맛"],
-      image: "메론사워.png"
     }
   ],
   highball: [
     {
       name_ko: "산토리 가쿠빈 하이볼",
       name_en: "Suntory Kakubin Highball",
-      price: 10900,
+      price: 11000,
       note: "하이볼의 원조, 산토리 위스키의 깔끔하고 청량한 맛.",
       tags: ["깔끔함", "청량감", "오리지널"],
       image: "산토리하이볼.png"
@@ -122,7 +113,7 @@ const menuData = {
     {
       name_ko: "얼그레이 하이볼",
       name_en: "Earl Grey Highball",
-      price: 10900,
+      price: 11000,
       note: "진한 얼그레이 시럽의 향긋함과 위스키의 조화.",
       tags: ["달달함", "인기", "향긋함"],
       image: "얼그레이하이볼.png"
@@ -138,7 +129,7 @@ const menuData = {
     {
       name_ko: "잭 콕",
       name_en: "Jack Coke",
-      price: 10900,
+      price: 11000,
       note: "잭 다니엘과 콜라의 환상적인 조합. 달콤하고 시원한 클래식.",
       tags: ["달달함", "콜라", "클래식"],
       image: "잭다니엘7.png"
@@ -170,6 +161,33 @@ const menuData = {
   ],
   whisky: [
     {
+      category: "Irish",
+      name_ko: "제임슨",
+      name_en: "Jameson",
+      price: "11,000 / 139,000",
+      note: "부드럽고 달콤한 아일랜드 위스키. 누구나 즐기기 좋은 맛.",
+      tags: ["아이리쉬", "부드러움", "가성비"],
+      image: "제임슨아이리쉬위스키.png"
+    },
+    {
+      category: "Blended",
+      name_ko: "조니워커 블랙 라벨",
+      name_en: "Johnnie Walker Black Label",
+      price: "16,000 / 179,000",
+      note: "스모키함과 깊은 복합미. 클래식한 선택. (블렌디드, 40%)",
+      tags: ["블렌디드", "스모키", "클래식"],
+      image: "조니워커블랙라벨.png"
+    },
+    {
+      category: "Bourbon",
+      name_ko: "메이커스 마크",
+      name_en: "Maker's Mark",
+      price: "16,000 / 189,000",
+      note: "붉은 밀랍 봉인의 프리미엄 버번 위스키. 부드러운 바닐라와 카라멜 향.",
+      tags: ["버번", "부드러움", "바닐라"],
+      image: "메이커스마크.png"
+    },
+    {
       category: "Single Malt",
       name_ko: "글렌피딕 12년 (Glass)",
       name_en: "Glenfiddich 12 Years",
@@ -186,33 +204,6 @@ const menuData = {
       note: "강렬한 피트 향과 바다의 풍미. 호불호가 갈리는 매니아의 위스키.",
       tags: ["싱글 몰트", "피트", "스모키"],
       image: "라프로익 10년.png"
-    },
-    {
-      category: "Bourbon",
-      name_ko: "메이커스 마크",
-      name_en: "Maker's Mark",
-      price: "16,900 / 189,000",
-      note: "붉은 밀랍 봉인의 프리미엄 버번 위스키. 부드러운 바닐라와 카라멜 향.",
-      tags: ["버번", "부드러움", "바닐라"],
-      image: "메이커스마크.png"
-    },
-    {
-      category: "Blended",
-      name_ko: "조니워커 블랙 라벨",
-      name_en: "Johnnie Walker Black Label",
-      price: "13,900 / 179,000",
-      note: "스모키함과 깊은 복합미. 클래식한 선택. (블렌디드, 40%)",
-      tags: ["블렌디드", "스모키", "클래식"],
-      image: "조니워커블랙라벨.png"
-    },
-    {
-      category: "Irish",
-      name_ko: "제임슨",
-      name_en: "Jameson",
-      price: "11,900 / 139,000",
-      note: "부드럽고 달콤한 아일랜드 위스키. 누구나 즐기기 좋은 맛.",
-      tags: ["아이리쉬", "부드러움", "가성비"],
-      image: "제임슨아이리쉬위스키.png"
     }
   ],
   beer: [
