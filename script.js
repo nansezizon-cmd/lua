@@ -121,7 +121,7 @@ const menuData = {
     {
       name_ko: "제임슨 진저 하이볼",
       name_en: "Jameson Ginger Highball",
-      price: 10900,
+      price: 11000,
       note: "제임슨 위스키와 진저에일의 달콤하고 알싸한 조화.",
       tags: ["달달함", "알싸함", "인기"],
       image: "제임슨진저하이볼.png"
@@ -137,7 +137,7 @@ const menuData = {
     {
       name_ko: "콥케 포트 토닉",
       name_en: "Kopke Port Tonic",
-      price: 10900,
+      price: 11000,
       note: "달콤한 포트 와인과 토닉워터의 색다른 만남.",
       tags: ["달달함", "와인 베이스", "이색적"],
       image: "콥케 루비 포트.png"
@@ -148,7 +148,7 @@ const menuData = {
       category: "Port",
       name_ko: "콥케 포트 (루비/화이트)",
       name_en: "Kopke Port",
-      price: "9,900 / 63,900",
+      price: "10,000 / 64,000",
       note: "달콤하고 진한 포트 와인. 디저트나 치즈와 환상적인 궁합.",
       tags: ["포트", "달달함", "도수 높음"],
       sweetness: 3,
@@ -164,16 +164,16 @@ const menuData = {
       category: "Irish",
       name_ko: "제임슨",
       name_en: "Jameson",
-      price: "11,000 / 139,000",
+      price: "11,000 / 140,000",
       note: "부드럽고 달콤한 아일랜드 위스키. 누구나 즐기기 좋은 맛.",
       tags: ["아이리쉬", "부드러움", "가성비"],
-      image: "제임슨아이리쉬위스키.png"
+      image: "제임슨진저하이볼.png"
     },
     {
       category: "Blended",
       name_ko: "조니워커 블랙 라벨",
       name_en: "Johnnie Walker Black Label",
-      price: "16,000 / 179,000",
+      price: "18,000 / 190,000",
       note: "스모키함과 깊은 복합미. 클래식한 선택. (블렌디드, 40%)",
       tags: ["블렌디드", "스모키", "클래식"],
       image: "조니워커블랙라벨.png"
@@ -182,7 +182,7 @@ const menuData = {
       category: "Bourbon",
       name_ko: "메이커스 마크",
       name_en: "Maker's Mark",
-      price: "16,000 / 189,000",
+      price: "16,000 / 180,000",
       note: "붉은 밀랍 봉인의 프리미엄 버번 위스키. 부드러운 바닐라와 카라멜 향.",
       tags: ["버번", "부드러움", "바닐라"],
       image: "메이커스마크.png"
@@ -191,7 +191,7 @@ const menuData = {
       category: "Single Malt",
       name_ko: "글렌피딕 12년 (Glass)",
       name_en: "Glenfiddich 12 Years",
-      price: "21,900 / 259,000",
+      price: "22,000 / 260,000",
       note: "세계에서 가장 사랑받는 싱글 몰트. 서양배의 신선한 향.",
       tags: ["싱글 몰트", "과일향", "입문용"],
       image: "글렉피딕12.png"
@@ -200,7 +200,7 @@ const menuData = {
       category: "Single Malt",
       name_ko: "라프로익 10년",
       name_en: "Laphroaig 10 Years",
-      price: "19,900 / 229,000",
+      price: "20,000 / 230,000",
       note: "강렬한 피트 향과 바다의 풍미. 호불호가 갈리는 매니아의 위스키.",
       tags: ["싱글 몰트", "피트", "스모키"],
       image: "라프로익 10년.png"
@@ -245,7 +245,7 @@ const menuData = {
       name_ko: "샤코",
       name_en: "Shine Muscat + Coconut",
       price: 8900,
-      note: "그냥 시원한 샤인 머스켓 샤베트에 코코넛 믹스에요 ㅋ",
+      note: "샤인 머스켓 샤베트와 코코넛 쥬스 믹스",
       tags: ["와인 잘 어울림", "여럿이서"],
       image: "샤코.png"
     }
