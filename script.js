@@ -145,9 +145,9 @@ const menuData = {
   ],
   wine: [
     {
-      category: "Port",
-      name_ko: "콥케 포트 (루비/화이트)",
-      name_en: "Kopke Port",
+      category: "Red",
+      name_ko: "콥케 루비 포트",
+      name_en: "Kopke Ruby Port",
       price: "10,000 / 64,000",
       note: "달콤하고 진한 포트 와인. 디저트나 치즈와 환상적인 궁합.",
       tags: ["포트", "달달함", "도수 높음"],
@@ -157,6 +157,34 @@ const menuData = {
       peat: 0,
       sherry: 0,
       image: "콥케 루비 포트.png"
+    },
+    {
+      category: "White",
+      name_ko: "콥케 화이트 포트",
+      name_en: "Kopke White Port",
+      price: "10,000 / 64,000",
+      note: "달콤하고 진한 화이트 포트 와인.",
+      tags: ["포트", "달달함", "도수 높음"],
+      sweetness: 3,
+      acidity: 1,
+      body: 3,
+      peat: 0,
+      sherry: 0,
+      image: "콥케 루비 포트.png"
+    },
+    {
+      category: "White",
+      name_ko: "빌라 욜란다 모스카토 다스티",
+      name_en: "Villa Jolanda Moscato d'Asti",
+      price: 60000,
+      note: "복숭아, 살구, 신선한 포도의 향과 달콤한 맛이 어우러진 스파클링 와인.",
+      tags: ["스파클링", "달달함", "낮은 도수"],
+      sweetness: 3,
+      acidity: 2,
+      body: 1,
+      peat: 0,
+      sherry: 0,
+      image: "빌라 욜란다 모스카토 다스티.png"
     }
   ],
   whisky: [
